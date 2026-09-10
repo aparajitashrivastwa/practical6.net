@@ -1,0 +1,55 @@
+﻿
+@model practical6.Models.Product
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Product Details</title>
+</head>
+
+<body>
+
+    @if (Model != null)
+    {
+        <h1>Product Details</h1>
+
+        <img src="@Model.ImageUrl"
+             width="300"
+             height="200" />
+
+        <h2>@Model.Name</h2>
+
+        <p>Product Id: @Model.Id</p>
+
+        <p>Product Category: @Model.Category</p>
+
+        <p>Price: ₹@Model.Price</p>
+
+        @Html.ActionLink(
+            "Back to Product Catalog",
+            "Index",
+            "Product"
+        )
+    }
+    else
+    {
+        <h1>Product Not Found</h1>
+
+        <p>Product not found</p>
+
+        @Html.ActionLink(
+            "Back to Product Catalog",
+            "Index",
+            "Product"
+        )
+    }
+
+</body>
+</html>
+
+
